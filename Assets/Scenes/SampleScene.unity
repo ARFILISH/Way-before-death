@@ -526,17 +526,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &368746169410924411 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4702757041932895891, guid: e155c21050a1c3b4dbd48247786a4024, type: 3}
-  m_PrefabInstance: {fileID: 4926234523901274600}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 375b11c81622f094099aeae88d1232a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &756654198048825231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -555,11 +544,27 @@ PrefabInstance:
     - target: {fileID: 756654197284024639, guid: 8b1678ef84578a147b3a9b82ed33ce7c, type: 3}
       propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 368746169410924411}
+      objectReference: {fileID: 0}
     - target: {fileID: 756654197284024639, guid: 8b1678ef84578a147b3a9b82ed33ce7c, type: 3}
       propertyPath: buttonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 368746169410924411}
+      objectReference: {fileID: 0}
+    - target: {fileID: 756654197284024639, guid: 8b1678ef84578a147b3a9b82ed33ce7c, type: 3}
+      propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddGateNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 756654197284024639, guid: 8b1678ef84578a147b3a9b82ed33ce7c, type: 3}
+      propertyPath: buttonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SubstractGateNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 756654197284024639, guid: 8b1678ef84578a147b3a9b82ed33ce7c, type: 3}
+      propertyPath: buttonPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Scripts.Gate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 756654197284024639, guid: 8b1678ef84578a147b3a9b82ed33ce7c, type: 3}
+      propertyPath: buttonReleased.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Scripts.Gate, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 939727878110664399, guid: 8b1678ef84578a147b3a9b82ed33ce7c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -770,6 +775,66 @@ PrefabInstance:
     - target: {fileID: 6243777076325248032, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: _delayBeforeReset
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: pressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: released.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: pressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: released.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: pressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: released.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: pressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: pressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddGateNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: released.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: released.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SubstractGateNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: pressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Scripts.Gate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: released.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: _Scripts.Gate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: pressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243777076325248034, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
+      propertyPath: released.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6243777076325248035, guid: 21632cfbd2699ea4cbf2215018ed5deb, type: 3}
       propertyPath: m_Name
