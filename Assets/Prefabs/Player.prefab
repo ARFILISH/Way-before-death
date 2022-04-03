@@ -88,7 +88,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -103,7 +103,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.16111112
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -216,7 +216,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -231,7 +231,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.16111112
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -267,7 +267,6 @@ GameObject:
   - component: {fileID: 2843647384848247411}
   - component: {fileID: 2843647384848247410}
   - component: {fileID: 2843647384848247408}
-  - component: {fileID: 2843647384848247409}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -305,7 +304,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.36
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -328,31 +327,11 @@ MonoBehaviour:
   _defaultMoveSpeed: 8
   _grabMoveSpeed: 5
   _turnSpeed: 256
-  _gravity: -0.5
-  _deathSound: {fileID: 0}
+  _gravity: -0.24
+  _deathSound: {fileID: 8300000, guid: e17b143ae60d52c41a1d479a1cbe0ace, type: 3}
+  _inputEnabled: 1
   currentlyHoldedObject: {fileID: 0}
---- !u!114 &2843647384848247409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2843647384848247421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d839b8273d6bea47a9638e98a2407aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeInSeconds: 5
-  loop: 0
-  _active: 0
-  coutdown:
-    m_PersistentCalls:
-      m_Calls: []
-  secondElapsedNoArgs:
-    m_PersistentCalls:
-      m_Calls: []
-  secondElapsed:
+  death:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &2843647383727291935

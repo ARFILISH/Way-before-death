@@ -65,5 +65,10 @@ namespace _Scripts
         {
             _active = false;
         }
+
+        public void IncreaseTimer(float value)
+        {
+            _timeRemained += value;
+        }
     }
 }

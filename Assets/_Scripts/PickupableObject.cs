@@ -31,7 +31,7 @@ namespace _Scripts
         {
             _pickedUp = true;
             transform.parent = interactedObject.transform;
-            transform.position = transform.parent.position + transform.parent.forward * 1.2f + new Vector3(0, 0.5f, 0);
+            transform.position = transform.parent.position + transform.parent.forward * 1.5f + new Vector3(0, 0.5f, 0);
             _rigidBody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
             if (interactedObject.GetComponent<PlayerController>() != null)
             {
@@ -48,6 +48,7 @@ namespace _Scripts
             _pickedUp = false;
             _soundPlayer.clip = _throwSound;
             _soundPlayer.Play();
+            transform.position = transform.parent.position + transform.parent.forward * 0.93f + new Vector3(0, 0.5f, 0);
             transform.parent = null;
         }
 
@@ -55,7 +56,7 @@ namespace _Scripts
         {
             if (_pickedUp)
             {
-                _rigidBody.MovePosition(transform.position = transform.parent.position + transform.parent.forward * 0.7f + new Vector3(0, 0.5f, 0));
+                _rigidBody.MovePosition(transform.position = transform.parent.position + transform.parent.forward * 0.75f + new Vector3(0, 0.5f, 0));
             }
         }
     }

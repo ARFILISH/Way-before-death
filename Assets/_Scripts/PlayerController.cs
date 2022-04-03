@@ -1,6 +1,6 @@
-using System;
 using _Scripts;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,8 +18,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _gravity = -0.5f;
     private bool _alive = true;
     [SerializeField] private AudioClip _deathSound;
+
+    [SerializeField] private bool _inputEnabled = true;
     
     public PickupableObject currentlyHoldedObject;
+
+    public UnityEvent death;
 
     private void Awake()
     {
@@ -34,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         UpdateAnimations();
         UpdateMovement();
-        if(_alive)
+        if(_alive && _inputEnabled)
             InteractingRays();
     }
 
@@ -43,13 +47,13 @@ public class PlayerController : MonoBehaviour
         if (_grounded)
             _velocity.y = 0;
         Vector3 rotationVector;
-        if (_alive)
+        if (_alive && _inputEnabled)
             rotationVector = (Input.GetAxisRaw("Vertical") * transform.forward +
                               Input.GetAxisRaw("Horizontal") * transform.right).normalized;
         else rotationVector = Vector3.zero;
         Vector3 desiredVelocity = new Vector3(rotationVector.x, 0 ,rotationVector.z) * (_maxMoveSpeed * Time.deltaTime) + new Vector3(0, _velocity.y + _gravity * Time.deltaTime, 0);
         _velocity = Vector3.MoveTowards(_velocity, desiredVelocity, Time.deltaTime * 1000);
-        if(_alive) transform.Rotate(new Vector3(0, 1, 0) * (Input.GetAxisRaw("Turn") * _turnSpeed * Time.deltaTime));
+        if(_alive && _inputEnabled) transform.Rotate(new Vector3(0, 1, 0) * (Input.GetAxisRaw("Turn") * _turnSpeed * Time.deltaTime));
         _controller.Move(_velocity);
     }
 
@@ -62,8 +66,15 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        _alive = false;
-        _animator.SetTrigger("Die");
+        if (_alive)
+        {
+            Throw();
+            _alive = false;
+            _animator.SetTrigger("Die");
+            _variousSource.clip = _deathSound;
+            _variousSource.Play();
+            death.Invoke();
+        }
     }
 
     public void InteractingRays()
@@ -76,7 +87,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             RaycastHit hit;
-            if (Physics.Raycast(transform.position,  transform.forward, out hit, 1f))
+            if (Physics.Raycast(transform.position,  transform.forward, out hit, 2f))
             {
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
 
@@ -96,9 +107,12 @@ public class PlayerController : MonoBehaviour
 
     public void Throw()
     {
-        currentlyHoldedObject.Throw();
-        _maxMoveSpeed = _defaultMoveSpeed;
-        currentlyHoldedObject.transform.parent = null;
-        currentlyHoldedObject = null;
+        if (currentlyHoldedObject != null)
+        {
+            currentlyHoldedObject.Throw();
+            _maxMoveSpeed = _defaultMoveSpeed;
+            currentlyHoldedObject.transform.parent = null;
+            currentlyHoldedObject = null;   
+        }
     }
 }

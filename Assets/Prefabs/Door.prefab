@@ -127,7 +127,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -142,7 +142,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.044444446
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -345,5 +345,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0019665288, y: 0.012050054, z: 0.019999994}
+  m_Size: {x: -0.005, y: 0.012050054, z: 0.019999994}
   m_Center: {x: 0.00000024161997, y: 0.000025028125, z: 0.009999997}
