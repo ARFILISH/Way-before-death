@@ -47,6 +47,11 @@ namespace _Scripts
             }
         }
 
+        public string Description()
+        {
+            return "press button";
+        }
+
         public void Press()
         {
             if (!_pressed)

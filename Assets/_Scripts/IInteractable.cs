@@ -5,5 +5,6 @@ namespace _Scripts
     public interface IInteractable
     {
         public void Interact(GameObject interactedObject);
+        public string Description();
     }
 }

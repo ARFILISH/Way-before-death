@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private bool _alive = true;
     [SerializeField] private AudioClip _deathSound;
 
+    [SerializeField] private GameHUD _hud;
+
     [SerializeField] private bool _inputEnabled = true;
     
     public PickupableObject currentlyHoldedObject;
@@ -59,8 +61,11 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimations()
     {
-        _animator.SetFloat("Speed", Input.GetAxisRaw("Vertical"), 0.06f, Time.deltaTime);
-        _animator.SetFloat("Direction", Input.GetAxisRaw("Horizontal"), 0.06f, Time.deltaTime);
+        if (_alive && _inputEnabled)
+        {
+            _animator.SetFloat("Speed", Input.GetAxisRaw("Vertical"), 0.06f, Time.deltaTime);
+            _animator.SetFloat("Direction", Input.GetAxisRaw("Horizontal"), 0.06f, Time.deltaTime);   
+        }
         _animator.SetBool("Grounded", _grounded);
     }
 
@@ -69,6 +74,10 @@ public class PlayerController : MonoBehaviour
         if (_alive)
         {
             Throw();
+            if (_hud != null)
+            {
+                _hud.HideHint();
+            }
             _alive = false;
             _animator.SetTrigger("Die");
             _variousSource.clip = _deathSound;
@@ -81,6 +90,10 @@ public class PlayerController : MonoBehaviour
     {
         if (currentlyHoldedObject != null)
         {
+            if (_hud != null)
+            {
+                _hud.HideHint();
+            }
             if(Input.GetButtonDown("Submit"))
                 Throw();
         }
@@ -93,8 +106,19 @@ public class PlayerController : MonoBehaviour
 
                 if (interactable != null)
                 {
+                    if (_hud != null)
+                    {
+                        _hud.ShowHint("<b><color=blue>ENTER</color></b> to " + interactable.Description());
+                    }
                     if (Input.GetButtonDown("Submit"))
                         interactable.Interact(gameObject);
+                }
+                else
+                {
+                    if (_hud != null)
+                    {
+                        _hud.HideHint();
+                    }
                 }
             }   
         }
@@ -114,5 +138,15 @@ public class PlayerController : MonoBehaviour
             currentlyHoldedObject.transform.parent = null;
             currentlyHoldedObject = null;   
         }
+    }
+
+    public void EnableInput()
+    {
+        _inputEnabled = true;
+    }
+
+    public void DisableInput()
+    {
+        _inputEnabled = false;
     }
 }

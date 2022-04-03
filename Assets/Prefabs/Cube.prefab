@@ -224,5 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf926fb3ff412344975c449ffa045f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: cube
   _pickupSound: {fileID: 8300000, guid: 970d037d52dda7b4292b74c0ba077fe5, type: 3}
   _throwSound: {fileID: 8300000, guid: 4ce286bef68cd70459eedae0c4327ebf, type: 3}

@@ -9,6 +9,8 @@ namespace _Scripts
         private bool _pickedUp = false;
         private Rigidbody _rigidBody;
 
+        [SerializeField] private string _name = "default name";
+        
         [SerializeField] private AudioClip _pickupSound;
         [SerializeField] private AudioClip _throwSound;
         
@@ -19,6 +21,11 @@ namespace _Scripts
                 PickUp(interactedObject);
             }
             else Throw();
+        }
+
+        public string Description()
+        {
+            return "pickup " + _name;
         }
 
         private void Awake()

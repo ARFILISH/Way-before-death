@@ -20,6 +20,8 @@ namespace _Scripts
         public UnityEvent coutdown;
         public UnityEvent secondElapsedNoArgs;
         public SecondElapsed secondElapsed;
+        public UnityEvent started;
+        public UnityEvent stopped;
 
         private void Awake()
         {
@@ -34,7 +36,7 @@ namespace _Scripts
                 {
                     _timeRemained -= Time.deltaTime;
                     _lastRoundValue = _currentRoundValue;
-                    _currentRoundValue = Mathf.FloorToInt(_timeRemained);
+                    _currentRoundValue = Mathf.RoundToInt(_timeRemained);
                     if(_currentRoundValue != _lastRoundValue)
                     {
                         secondElapsedNoArgs.Invoke();
@@ -58,17 +60,27 @@ namespace _Scripts
         public void StartTimer()
         {
             _timeRemained = timeInSeconds;
+            started.Invoke();
             _active = true;
         }
 
         public void StopTimer()
         {
             _active = false;
+            stopped.Invoke();
         }
 
         public void IncreaseTimer(float value)
         {
             _timeRemained += value;
+        }
+
+        private void Start()
+        {
+            if (_active)
+            {
+                StartTimer();
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ namespace _Scripts
             transform.position = _active ? _initialPosition : _initialPosition + _notActivePosition;
         }
         
-        private void Update()
+        private void FixedUpdate()
         {
             transform.position = Vector3.SmoothDamp(transform.position, _active ? _initialPosition : _initialPosition + _notActivePosition, ref _velocity, _smoothing * Time.deltaTime);
         }
