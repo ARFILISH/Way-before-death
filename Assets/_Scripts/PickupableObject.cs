@@ -59,7 +59,7 @@ namespace _Scripts
             transform.parent = null;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             if (_pickedUp)
             {
