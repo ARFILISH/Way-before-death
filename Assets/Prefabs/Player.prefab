@@ -326,9 +326,10 @@ MonoBehaviour:
   _maxMoveSpeed: 8
   _defaultMoveSpeed: 8
   _grabMoveSpeed: 5
-  _turnSpeed: 256
+  _turnSpeed: 298
   _gravity: -0.24
   _deathSound: {fileID: 8300000, guid: e17b143ae60d52c41a1d479a1cbe0ace, type: 3}
+  _hud: {fileID: 0}
   _inputEnabled: 1
   currentlyHoldedObject: {fileID: 0}
   death:
