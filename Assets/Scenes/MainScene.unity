@@ -22889,7 +22889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<size=75>YOU LOOSE.</size>
+  m_text: '<size=75>YOU LOSE.</size>
 
 
     It''s pretty sad... But you can try again!'
@@ -29011,7 +29011,7 @@ GameObject:
   - component: {fileID: 2045487539}
   - component: {fileID: 2045487538}
   m_Layer: 5
-  m_Name: LooseWindow
+  m_Name: LoseWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
