@@ -23375,7 +23375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b><color=blue>WA</color></b> - move forward/backward
+  m_text: '<b><color=blue>WS</color></b> - move forward/backward
 
 
     <b><color=blue>AD</color></b>
